@@ -20,7 +20,7 @@ $(function () {
   });
   $("#regiForm").on("submit", function (e) {
     e.preventDefault();
-    let data = $(this).serilize();
+    let data = $(this).serialize();
     $.ajax({
       type: "POST",
       url: "/api/reguser",
@@ -29,14 +29,14 @@ $(function () {
         if (res.status !== 0) {
           return layer.msg("注册失败！" + res.message);
         }
-        layer.mag("注册成功!");
+        layer.msg("注册成功!");
         $("#gotoLogin").click();
       }
     })
   });
   $("#loginForm").on("submit", function (e) {
     e.preventDefault();
-    let data = $(this).serilize();
+    let data = $(this).serialize();
     $.ajax({
       type: "POST",
       url: "/api/login",
